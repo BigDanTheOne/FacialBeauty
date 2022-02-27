@@ -103,7 +103,7 @@ def inference(img, hmtnet_model_file='/home/bigdan/models/HMTNet/models/HMTNet.p
 
 
 if __name__ == '__main__':
-    pprint(inference('./xl.jpg'))
+    pprint(inference('./img.jpeg'))
 
     # image = cv2.imread('./xl.jpg')
     # image = cv2.resize(image, (224, 224))
@@ -119,3 +119,5 @@ if __name__ == '__main__':
     # cv2.imshow('img', image)
     # cv2.waitKey()
     # cv2.destroyAllWindows()
+
+    'wget --output-document=img.jpg https://sun9-34.userapi.com/impf/c857520/v857520357/20063/rkfeRQXAGTY.jpg?size=750x1080&quality=96&sign=9bfc8f2154971983be97a4a65a927201&type=album'

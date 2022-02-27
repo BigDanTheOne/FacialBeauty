@@ -24,7 +24,7 @@ class HMTNetRecognizer():
     HMTNet Recognizer Class Wrapper
     """
 
-    def __init__(self, pretrained_model_path='/home/bigdan/models/HMTNet/models/HMTNet.pth'):
+    def __init__(self, pretrained_model_path='~/HMTNet.pth'):
         model = HMTNet()
         model = model.float()
         device = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')
@@ -262,7 +262,7 @@ def infer_and_show_img(img_filepath, hmt_result, show_window=True):
 
     final_image[0:h, w:2 * w, :] = image
 
-    save_to_dir = '/home/bigdan/models/HMTNet'
+    save_to_dir = '~/HMTNet'
     mkdirs_if_not_exist(save_to_dir)
     cv2.imwrite(os.path.join(save_to_dir, img_filepath.split(os.sep)[-1]), final_image)
 
@@ -328,9 +328,9 @@ def infer_and_show_mul_people_img(img_filepath):
 
 
 if __name__ == '__main__':
-    hmtnet_recognizer = HMTNetRecognizer(pretrained_model_path='/home/bigdan/models/HMTNet/models/HMTNet.pth')
+    hmtnet_recognizer = HMTNetRecognizer(pretrained_model_path='~/HMTNet.pth')
 
 
-    hmt_result = hmtnet_recognizer.infer("/home/bigdan/models/HMTNet/photo_2022-02-21_23-29-48.jpg")
+    hmt_result = hmtnet_recognizer.infer("~/img.jpeg")
     pprint(hmt_result)
     # infer_and_show_img("/home/bigdan/models/HMTNet/4b35020afd5c941d285f.jpg", hmt_result, show_window=False)jpg
